@@ -3,29 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Gallery</title>
+    <meta name="description" content="Celebrate Valentine's Day with love and joy!">
+    <meta name="author" content="gotofinds.shop">
+    <title>Valentine's Day Gift Finder ❤️</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24' fill='red'>&#10084;</text></svg>">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Heart Loading Animation */
+        .heart-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            background: #ff4b6e;
+            position: relative;
+            transform: rotate(45deg);
+            animation: heartbeat 2s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: #ff4b6e;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            left: -25px;
+        }
+
+        .heart:after {
+            top: -25px;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: rotate(45deg) scale(0.8); }
+            5% { transform: rotate(45deg) scale(0.9); }
+            10% { transform: rotate(45deg) scale(0.8); }
+            15% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(0.8); }
+            100% { transform: rotate(45deg) scale(0.8); }
+        }
+
+        /* Dark Mode Styles */
+        [data-theme="dark"] {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        [data-theme="dark"] .bg-white {
+            background-color: #2d2d2d;
+        }
+
+        [data-theme="dark"] .text-gray-800 {
+            color: #e0e0e0;
+        }
+
+        @keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.animate-pulse {
+  animation: pulse 1.5s infinite;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+    </style>
 </head>
-<body class="min-h-full w-full bg-white md:p-1">
+<body>
+    <!-- Loading Animation -->
+    <div id="loader" class="heart-loader">
+        <div class="heart"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="fixed top-2 right-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+        <svg class="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path class="sun" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            <path class="moon" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+    </button>
+
+    <!-- Valentine's Countdown -->
+    <div class="fixed bottom-2 right-2 bg-pink-100 dark:bg-pink-900 p-2 rounded-lg shadow-lg">
+        <h3 class="text-sm font-semibold mb-2">Valentine's Day Countdown</h3>
+        <div id="countdown" class="text-sm  text-pink-600 dark:text-pink-300"></div>
+    </div>
+
+    <!-- Gift Quiz Modal -->
+    <div id="quizModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg max-w-md w-full">
+            <h2 class="text-lg  mb-4">Find the Perfect Gift</h2>
+            <div id="quizContent"></div>
+        </div>
+    </div>
+
     <nav class="relative w-full bg-white">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-gradient-to-b from-opacity-40 to-opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.4\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E');"></div>
         </div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-24 items-center justify-between">
+            <div class="flex h-24 items-center justify-center">
                 <div class="flex-shrink-0">
-                    <img class="h-8 w-8 rounded" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Logo">
+                    <img class="h-16 w-16 rounded" src="https://th.bing.com/th/id/R.c43b4460cd43b5243846c6ff5b522b58?rik=7gDw6YDlZ5TDSA&riu=http%3a%2f%2f2.bp.blogspot.com%2f--kuFE_ikuLo%2fU9fTBG6ozhI%2fAAAAAAAALJ8%2fS9yUX0u3eDM%2fs1600%2fdarling-valentine-smiley.png&ehk=yP82vJchADNZSdHeZ2NnBR9Hx%2binP4Mvw2xzC4cqXK4%3d&risl=&pid=ImgRaw&r=0" alt="Logo">
                 </div>
                 <div class="flex flex-col items-center">
                     <h1 class="font-serif text-3xl font-extrabold tracking-tight text-gray-900">
-                        Product Gallery
+                        VALENTINE'S GIFT
                     </h1>
-                    <span class="text-sm font-medium text-gray-500">Discover Amazing Products</span>
+                    <span class="text-sm font-medium text-gray-500">Find Your Perfect Gift</span>
                 </div>
-                <div class="flex-shrink-0 w-8"></div>
             </div>
         </div>
     </nav>
+    <div class="w-full  bg-white">
+        <div class="animate-slide-in w-full bg-pink-50 border-b border-pink-100 overflow-hidden">
+          <div class="flex items-center justify-center space-x-2 py-2 text-sm text-pink-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-pink-500 animate-pulse"
+              width="14"
+              height="14"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 15s-7-4.686-7-8.5A4.5 4.5 0 0 1 8 2a4.5 4.5 0 0 1 7 4.5C15 10.314 8 15 8 15z" />
+            </svg>
+            <span>Spread love and joy this Valentine's Day! 💝</span>
+          </div>
+        </div>
+      </div>      
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6">
         <div class="flex gap-4">
             <div class="relative w-48">
@@ -61,8 +192,105 @@
         </div>
     </div>
     
-    <div id="app"></div>
+    <div id="app" style="z-index: 999;"></div>
     <script>
+        // Remove loader after content loads
+        window.addEventListener('load', () => {
+            document.getElementById('loader').style.display = 'none';
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.setAttribute('data-theme', 
+                document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+            );
+        });
+
+        // Valentine's Countdown
+        function updateCountdown() {
+            const valentine = new Date(new Date().getFullYear(), 1, 14);
+            if (valentine < new Date()) {
+                valentine.setFullYear(valentine.getFullYear() + 1);
+            }
+            
+            const now = new Date();
+            const diff = valentine - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            document.getElementById('countdown').textContent = 
+                `${days}d ${hours}h until Valentine's!`;
+        }
+        setInterval(updateCountdown, 1000);
+
+        // Gift Quiz
+        const quizQuestions = [
+            {
+                question: "What's their favorite color?",
+                options: ["Red", "Pink", "Blue", "Purple"]
+            },
+            {
+                question: "What's their style?",
+                options: ["Classic", "Modern", "Romantic", "Practical"]
+            },
+            // Add more questions...
+        ];
+
+        let currentQuestion = 0;
+        let quizAnswers = [];
+
+        function startQuiz() {
+            document.getElementById('quizModal').classList.remove('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('quizContent').innerHTML = `
+                <p class="mb-4">${question.question}</p>
+                <div class="space-y-2">
+                    ${question.options.map(option => `
+                        <button onclick="answerQuestion('${option}')" 
+                                class="w-full p-2 text-left hover:bg-pink-100 rounded">
+                            ${option}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function answerQuestion(answer) {
+            quizAnswers.push(answer);
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                showRecommendations();
+            }
+        }
+
+        function showRecommendations() {
+            // Implement gift recommendations based on answers
+            const recommendations = getRecommendations(quizAnswers);
+            document.getElementById('quizContent').innerHTML = `
+                <h3 class="text-lg font-bold mb-4">Your Perfect Gift Recommendations</h3>
+                <div class="space-y-4">
+                    ${recommendations.map(item => `
+                        <div class="border p-4 rounded">
+                            <h4 class="font-semibold">${item.name}</h4>
+                            <p class="text-sm text-gray-600">${item.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                <button onclick="closeQuiz()" 
+                        class="mt-4 w-full bg-pink-500 text-white p-2 rounded">
+                    Close
+                </button>
+            `;
+        }
+
         const productsData = [
             {
                 id: 1,
@@ -1036,6 +1264,16 @@
         }
 
         renderApp();
+
+        // Add wishlist functionality to product cards
+        function addToWishlist(productId) {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+            if (!wishlist.includes(productId)) {
+                wishlist.push(productId);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateWishlistUI();
+            }
+        }
     </script>
 </body>
 </html>
