@@ -69,8 +69,35 @@
             background-color: #2d2d2d;
         }
 
-        [data-theme="dark"] .text-gray-800 {
-            color: #e0e0e0;
+        [data-theme="dark"] .text-gray-800,
+        [data-theme="dark"] .text-gray-900,
+        [data-theme="dark"] .text-gray-600,
+        [data-theme="dark"] .text-gray-500 {
+            color: #ffffff !important;
+        }
+
+        [data-theme="dark"] .hover\:bg-gray-50:hover {
+            background-color: #3d3d3d;
+        }
+
+        [data-theme="dark"] .border {
+            border-color: #404040;
+        }
+
+        [data-theme="dark"] .bg-white {
+            background-color: #2d2d2d;
+        }
+
+        [data-theme="dark"] .bg-gray-100 {
+            background-color: #333333;
+        }
+
+        [data-theme="dark"] .bg-pink-50 {
+            background-color: #3d2d2d;
+        }
+
+        [data-theme="dark"] .bg-yellow-50 {
+            background-color: #3d3525;
         }
 
         @keyframes pulse {
@@ -94,25 +121,58 @@
 }
     </style>
 </head>
-<body>
+<body >
     <!-- Loading Animation -->
     <div id="loader" class="heart-loader">
         <div class="heart"></div>
     </div>
 
     <!-- Theme Toggle -->
-    <button id="themeToggle" class="fixed top-2 right-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700">
-        <svg class="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <button id="themeToggle" class="fixed top-2 right-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 z-50">
+        <svg class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path class="sun" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
             <path class="moon" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
         </svg>
     </button>
 
     <!-- Valentine's Countdown -->
-    <div class="fixed bottom-2 right-2 bg-pink-100 dark:bg-pink-900 p-2 rounded-lg shadow-lg">
-        <h3 class="text-sm font-semibold mb-2">Valentine's Day Countdown</h3>
-        <div id="countdown" class="text-sm  text-pink-600 dark:text-pink-300"></div>
+    <div id="countdownContainer" class="fixed bottom-2 right-2">
+        <!-- Expanded countdown view -->
+        <div id="countdownExpanded" class="bg-pink-100 dark:bg-pink-900 p-2 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center">
+                <h3 class="text-sm font-semibold">Valentine's Day Countdown</h3>
+                <button onclick="closeCountdown()" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="countdown" class="text-sm text-pink-600 dark:text-pink-300 mt-2"></div>
+        </div>
+        
+        <!-- Collapsed icon view -->
+        <button id="countdownCollapsed" onclick="showCountdown()" class="hidden bg-pink-100 dark:bg-pink-900 p-2 rounded-full shadow-lg">
+            <svg class="w-5 h-5 text-pink-600 dark:text-pink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </button>
     </div>
+    <script>
+        // Auto hide countdown after 15 seconds
+        setTimeout(() => {
+            closeCountdown();
+        }, 15000);
+
+        function closeCountdown() {
+            document.getElementById('countdownExpanded').classList.add('hidden');
+            document.getElementById('countdownCollapsed').classList.remove('hidden');
+        }
+
+        function showCountdown() {
+            document.getElementById('countdownExpanded').classList.remove('hidden');
+            document.getElementById('countdownCollapsed').classList.add('hidden');
+        }
+    </script>
 
     <!-- Gift Quiz Modal -->
     <div id="quizModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -129,13 +189,13 @@
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-24 items-center justify-center">
                 <div class="flex-shrink-0">
-                    <img class="h-16 w-16 rounded" src="https://th.bing.com/th/id/R.c43b4460cd43b5243846c6ff5b522b58?rik=7gDw6YDlZ5TDSA&riu=http%3a%2f%2f2.bp.blogspot.com%2f--kuFE_ikuLo%2fU9fTBG6ozhI%2fAAAAAAAALJ8%2fS9yUX0u3eDM%2fs1600%2fdarling-valentine-smiley.png&ehk=yP82vJchADNZSdHeZ2NnBR9Hx%2binP4Mvw2xzC4cqXK4%3d&risl=&pid=ImgRaw&r=0" alt="Logo">
+                    <img class="h-12 w-12 sm:h-16 sm:w-16 rounded" src="https://th.bing.com/th/id/R.c43b4460cd43b5243846c6ff5b522b58?rik=7gDw6YDlZ5TDSA&riu=http%3a%2f%2f2.bp.blogspot.com%2f--kuFE_ikuLo%2fU9fTBG6ozhI%2fAAAAAAAALJ8%2fS9yUX0u3eDM%2fs1600%2fdarling-valentine-smiley.png&ehk=yP82vJchADNZSdHeZ2NnBR9Hx%2binP4Mvw2xzC4cqXK4%3d&risl=&pid=ImgRaw&r=0" alt="Logo">
                 </div>
                 <div class="flex flex-col items-center">
-                    <h1 class="font-serif text-3xl font-extrabold tracking-tight text-gray-900">
+                    <h1 class="font-serif text-xl sm:text-3xl font-extrabold tracking-tight text-gray-900">
                         VALENTINE'S GIFT
                     </h1>
-                    <span class="text-sm font-medium text-gray-500">Find Your Perfect Gift</span>
+                    <span class="text-xs sm:text-sm font-medium text-gray-500">Find Your Perfect Gift</span>
                 </div>
             </div>
         </div>
