@@ -9,6 +9,93 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24' fill='red'>&#10084;</text></svg>">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        /* Custom Theme Colors */
+        :root {
+            --primary: #4B164C;
+            --background: #F5F5F5;
+            --accent-light: #F8E7F6;
+            --accent-dark: #DD88CF;
+        }
+
+        body {
+            background-color: var(--background);
+        }
+
+        /* Update Heart Loading Animation */
+        .heart {
+            background: var(--accent-dark) !important;
+        }
+
+        .heart:before,
+        .heart:after {
+            background: var(--accent-dark) !important;
+        }
+
+        /* Dark Mode Updates */
+        [data-theme="dark"] {
+            --background: #1a1a1a;
+            --text-primary: var(--background);
+        }
+
+        /* Navigation and Header Updates */
+        nav.bg-white,
+        .bg-white {
+            background-color: var(--background) !important;
+        }
+
+        .text-gray-900,
+        .text-gray-800,
+        .text-gray-700,
+        .text-gray-600 {
+            color: var(--primary) !important;
+        }
+
+        /* Button and Interactive Element Updates */
+        .bg-pink-50 {
+            background-color: var(--accent-light) !important;
+        }
+
+        .bg-pink-100 {
+            background-color: var(--accent-dark) !important;
+        }
+
+        .text-pink-600,
+        .text-pink-700,
+        .text-pink-800 {
+            color: var(--primary) !important;
+        }
+
+        .hover\:bg-gray-50:hover {
+            background-color: var(--accent-light) !important;
+        }
+
+        .ring-pink-500 {
+            --tw-ring-color: var(--primary) !important;
+        }
+
+        .hover\:ring-purple-300:hover {
+            --tw-ring-color: var(--accent-dark) !important;
+        }
+
+        /* Gradient Updates */
+        .bg-gradient-to-br {
+            background: var(--background) !important;
+        }
+
+        .from-pink-50 {
+            --tw-gradient-from: var(--accent-light) !important;
+        }
+
+        .to-purple-50 {
+            --tw-gradient-to: var(--accent-dark) !important;
+        }
+
+        /* Text Gradient */
+        .from-pink-600.to-purple-600.bg-gradient-to-r {
+            --tw-gradient-from: var(--primary) !important;
+            --tw-gradient-to: var(--accent-dark) !important;
+        }
+
         /* Heart Loading Animation */
         .heart-loader {
             position: fixed;
@@ -240,7 +327,7 @@
           </div>
         </div>
       </div>      
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-6 ">
+    <div class="max-w-7xl mx-auto px-2 sm:px-2 lg:px-2 my-2 ">
         <div class="flex gap-4">
             <div class="relative w-35">
                 <button id="categoryDropdown" 
