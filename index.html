@@ -121,6 +121,27 @@
     transform: translateX(0);
   }
 }
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scale-102 {
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+}
     </style>
 </head>
 <body >
@@ -138,7 +159,7 @@
     </button>
 
     <!-- Valentine's Countdown -->
-    <div id="countdownContainer" class="fixed bottom-2 right-2">
+    <div id="countdownContainer" class="fixed bottom-2 right-2 z-50">
         <!-- Expanded countdown view -->
         <div id="countdownExpanded" class="bg-pink-100 dark:bg-pink-900 p-2 rounded-lg shadow-lg">
             <div class="flex justify-between items-center">
@@ -219,7 +240,7 @@
           </div>
         </div>
       </div>      
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-6">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-6 ">
         <div class="flex gap-4">
             <div class="relative w-35">
                 <button id="categoryDropdown" 
@@ -1157,38 +1178,63 @@
 
         function renderApp(filteredProducts = productsData) {
             appContainer.innerHTML = `
-                <div class="min-h-full w-full bg-white ">
-                    <div class="mx-auto max-w-7xl">
-                        <div class="grid gap-2 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+                <div class="min-h-full w-full bg-gradient-to-br from-pink-50 to-purple-50 dark:from-gray-900 dark:to-purple-900">
+                    <div class="mx-auto max-w-7xl px-2 py-4 sm:px-3 lg:px-4">
+                        <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+
                             ${filteredProducts.map(product => `
-                                <div class=" rounded-xl p-0.5 bg-transparent">
-                                    <div class="flex justify-between items-center mb-4">
-                                            <h2 class="text-2xl font-semibold text-gray-800 tracking-tight hover:text-gray-900 transition-colors duration-200">
+                                <div class="transform transition-all duration-300 hover:scale-102 hover:shadow-xl min-w-[280px]">
+                                    <div class="rounded-2xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden p-2.5">
+                                        <div class="flex flex-col sm:flex-col justify-between items-center sm:items-center gap-2 mb-1">
+                                            <h2 class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent break-words">
                                                 ${product.name}
                                             </h2>
-                                            <span class="text-sm text-gray-500">${product.category}</span>
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 whitespace-nowrap">
+                                                ${product.category}
+                                            </span>
                                         </div>
-                                        <div class="text-sm text-gray-500 mb-2">
-                                            Codes: ${product.variants.map(v => v.code).join(', ')}
+                                        
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                            <span class="font-medium">Product Codes:</span> 
+                                            <div class="flex flex-wrap gap-2 mt-1">
+                                                ${product.variants.map(v => `
+                                                    <span class="px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-700 text-xs">
+                                                        ${v.code}
+                                                    </span>
+                                                `).join('')}
+                                            </div>
                                         </div>
-                                        <div class="space-y-4">
-                                        <div id="gallery-${product.id}">
-                                            ${createImageGalleryHTML(product.id)}
+
+                                        <div class="space-y-1.5">
+                                            <div id="gallery-${product.id}" class="relative">
+                                                ${createImageGalleryHTML(product.id)}
+                                            </div>
+                                            
+                                            <div class="flex gap-2 overflow-x-auto p-1 scrollbar-hide">
+                                                ${product.variants.map(variant => `
+                                                    <button 
+                                                        onclick="handleVariantSelect(${product.id}, ${variant.id})" 
+                                                        class="flex-none transition-all duration-200 ${
+                                                            selectedVariants[product.id].variant.id === variant.id 
+                                                            ? "ring-2 ring-pink-500 scale-105 rounded-lg" 
+                                                            : "hover:ring-2 hover:ring-purple-300"
+                                                        }"
+                                                    >
+                                                        <img 
+                                                            src="${variant.images[0].url}" 
+                                                            alt="${variant.name}" 
+                                                            class="h-16 w-16 rounded-lg object-cover object-center" 
+                                                        />
+                                                    </button>
+                                                `).join('')}
+                                            </div>
                                         </div>
-                                        <div class="flex gap-2 overflow-x-auto">
-                                            ${product.variants.map(variant => `
-                                                <button onclick="handleVariantSelect(${product.id}, ${variant.id})" class="flex-none ${
-                                                    selectedVariants[product.id].variant.id === variant.id ? "ring-2 ring-black" : ""
-                                                }">
-                                                    <img src="${variant.images[0].url}" alt="${variant.name}" class="h-16 w-16 rounded-md object-cover object-center" />
-                                                </button>
-                                            `).join('')}
+
+                                        <div class="mt-2">
+                                            ${createAffiliateLinkHTML(product.id)}
                                         </div>
                                     </div>
-                                     <div>
-                                        ${createAffiliateLinkHTML(product.id)}
-                                    </div>
-                                 </div>
+                                </div>
                             `).join('')}
                         </div>
                     </div>
@@ -1242,8 +1288,9 @@
             const AffiliateLink = product.variants.find(v => v.id === selectedVariants[productId].variant.id).affiliateLinks;
 
             return `
-                <h3 class="mb-3 font-semibold">Available From</h3>
+                <h3 class="mb-2 font-semibold text-lg">Available From</h3>
                 <div class="space-y-3">
+
                     ${AffiliateLink.map(link => `
                         <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="flex flex-col w-full rounded-lg border p-3 hover:bg-gray-50 space-y-2">
                             <div class="flex items-center justify-between">
@@ -1302,21 +1349,49 @@
             const images = variant.images;
 
             const indicatorsHTML = images.map((_, index) => `
-                <button class="w-2 h-2 rounded-full transition-all ${currentIndex === index ? "bg-black" : "bg-gray-300"}"
-                        aria-label="Go to image ${index + 1}" onclick="updateGallery(${productId}, ${index})">
-                </button>
+                <button 
+                    class="w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                        currentIndex === index 
+                        ? "bg-pink-500 w-4" 
+                        : "bg-gray-300 hover:bg-pink-300 hover:rounded-full"
+                    }"
+                    aria-label="Go to image ${index + 1}" 
+                    onclick="updateGallery(${productId}, ${index})"
+                ></button>
             `).join('');
 
             return `
-                <div class="relative w-full" style="aspect-ratio:1/1">
-                    <div class="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
-                        <img src="${images[currentIndex].url}" alt="${images[currentIndex].alt}" class="h-full w-full object-cover object-center" />
-                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-2">${indicatorsHTML}</div>
-                        <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full" aria-label="Previous"
-                                onclick="prevImage(${productId})">&lt;</button>
-                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full" aria-label="Next"
-                                onclick="nextImage(${productId})">&gt;</button>
+                <div class="relative w-full rounded-xl overflow-hidden" style="aspect-ratio:1/1">
+                    <img 
+                        src="${images[currentIndex].url}" 
+                        alt="${images[currentIndex].alt}" 
+                        class="h-full w-full object-cover object-center transition-opacity duration-300"
+                    />
+                    
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-black bg-opacity-20 rounded-full px-3 py-1.5">
+                        ${indicatorsHTML}
                     </div>
+                    
+
+                    <button 
+                        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 p-2 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                        aria-label="Previous"
+                        onclick="prevImage(${productId})"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    
+                    <button 
+                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 p-2 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                        aria-label="Next"
+                        onclick="nextImage(${productId})"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
             `;
         }
