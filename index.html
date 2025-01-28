@@ -75,7 +75,9 @@
         [data-theme="dark"] .text-gray-500 {
             color: #ffffff !important;
         }
-
+        [data-theme="dark"] .cccc {
+            color: #000000 !important;
+        }
         [data-theme="dark"] .hover\:bg-gray-50:hover {
             background-color: #3d3d3d;
         }
@@ -217,9 +219,9 @@
           </div>
         </div>
       </div>      
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-6">
         <div class="flex gap-4">
-            <div class="relative w-48">
+            <div class="relative w-35">
                 <button id="categoryDropdown" 
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white flex items-center justify-between"
                         onclick="toggleCategoryDropdown()">
@@ -237,7 +239,7 @@
                 <input type="text" 
                        id="searchInput" 
                        placeholder="Search products by name or code..." 
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                       class=" cccc w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                        oninput="handleSearchInput()">
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                     <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -252,7 +254,7 @@
         </div>
     </div>
     
-    <div id="app" style="z-index: 999;"></div>
+    <div id="app"></div>
     <script>
         // Remove loader after content loads
         window.addEventListener('load', () => {
@@ -1065,7 +1067,7 @@
         function filterByCategory(category) {
         selectedCategory = category === "All Categories" ? null : category; 
         document.getElementById("selectedCategory").textContent = 
-            `Category: ${selectedCategory || "All Categories"}`;
+            ` ${selectedCategory || "All Categories"}`;
         applyFilters(); 
         }
         function initializeCategoryFilter() {
@@ -1111,7 +1113,20 @@
                     product.variants.some(variant => variant.code.toLowerCase().includes(query)); // Search by variant code
                 return matchesCategory && matchesSearch;
             });
-            renderApp(filteredProducts); 
+
+            if (filteredProducts.length === 0) {
+                appContainer.innerHTML = `
+                    <div class="flex flex-col items-center justify-center p-8">
+                        <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">No products found</h3>
+                        <p class="text-gray-500">Try adjusting your search or filter criteria</p>
+                    </div>
+                `;
+            } else {
+                renderApp(filteredProducts);
+            }
         }
 
 
@@ -1237,13 +1252,13 @@
                                     <span class="font-medium">${link.name}</span>
                                 </div>
                                 ${link.coupon ? `
-                                    <div class="flex items-center gap-2 bg-yellow-50 px-3 py-1 rounded-lg">
-                                        <svg class="h-5 w-5 text-yellow-600" viewBox="0 0 20 20" fill="currentColor">
+                                    <div class="flex items-center gap-2 bg-yellow-50 dark:bg-yellow-900 px-3 py-1 rounded-lg">
+                                        <svg class="h-5 w-5 text-yellow-600 dark:text-yellow-300" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M5.5 3A2.5 2.5 0 003 5.5v2.879a2.5 2.5 0 00.732 1.767l6.5 6.5a2.5 2.5 0 003.536 0l2.878-2.878a2.5 2.5 0 000-3.536l-6.5-6.5A2.5 2.5 0 008.38 3H5.5zM6 7a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                                         </svg>
                                         <div class="flex flex-col">
-                                            <span class="text-sm font-semibold text-yellow-800">${link.coupon.code}</span>
-                                            <span class="text-xs text-yellow-600">${link.coupon.discount}</span>
+                                            <span class="text-sm font-semibold text-yellow-800 dark:text-yellow-200">${link.coupon.code}</span>
+                                            <span class="text-xs text-yellow-600 dark:text-yellow-300">${link.coupon.discount}</span>
                                         </div>
                                     </div>
                                 ` : ''}
