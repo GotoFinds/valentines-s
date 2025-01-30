@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Celebrate Valentine's Day with love and joy!">
+    <meta name="google-site-verification" content="4eql3A-Wy0DNu-GxoCjr69VHEgHQq_yku2WgeF91c9E" />
     <meta name="author" content="gotofinds.shop">
+    <meta name="description" content="Your website description">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<meta name="author" content="Your Name">
+<meta property="og:title" content="Your Website Title">
+<meta property="og:description" content="A brief description of your website">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://yourdomain.com/image.jpg">
+
     <title>Valentine's Day Gift Finder ❤️</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24' fill='red'>&#10084;</text></svg>">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Add this line to import the font -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom Theme Colors */
         :root {
             --primary: #4B164C;
             --background: #F5F5F5;
@@ -30,7 +37,6 @@
             overflow-x: hidden;
         }
 
-        /* Update Heart Loading Animation */
         .heart {
             background: var(--accent-dark) !important;
         }
@@ -40,13 +46,11 @@
             background: var(--accent-dark) !important;
         }
 
-        /* Dark Mode Updates */
         [data-theme="dark"] {
             --background: #1a1a1a;
             --text-primary: var(--background);
         }
 
-        /* Navigation and Header Updates */
         nav.bg-white,
         .bg-white {
             background-color: var(--background) !important;
@@ -59,7 +63,6 @@
             color: var(--primary) !important;
         }
 
-        /* Button and Interactive Element Updates */
         .bg-pink-50 {
             background-color: var(--accent-light) !important;
         }
@@ -86,7 +89,6 @@
             --tw-ring-color: var(--accent-dark) !important;
         }
 
-        /* Gradient Updates */
         .bg-gradient-to-br {
             background: var(--background) !important;
         }
@@ -99,13 +101,11 @@
             --tw-gradient-to: var(--accent-dark) !important;
         }
 
-        /* Text Gradient */
         .from-pink-600.to-purple-600.bg-gradient-to-r {
             --tw-gradient-from: var(--primary) !important;
             --tw-gradient-to: var(--accent-dark) !important;
         }
 
-        /* Heart Loading Animation */
         .heart-loader {
             position: fixed;
             top: 0;
@@ -155,7 +155,6 @@
             100% { transform: rotate(45deg) scale(0.8); }
         }
 
-        /* Dark Mode Styles */
         [data-theme="dark"] {
             background-color: #1a1a1a;
             color: #ffffff;
@@ -199,101 +198,99 @@
         }
 
         @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-.animate-pulse {
-  animation: pulse 1.5s infinite;
-}
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        }
+        .animate-pulse {
+        animation: pulse 1.5s infinite;
+        }
+        @keyframes slideIn {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+        }
 
-.scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-}
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
 
-.scale-102 {
-    transform: scale(1.02);
-}
+        .scale-102 {
+            transform: scale(1.02);
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-.animate-fadeIn {
-    animation: fadeIn 0.3s ease-in-out;
-}
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-in-out;
+        }
 
-@keyframes slide {
-    0% { transform: translateX(100%); }
-    10%, 90% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-.animate-slide {
-    animation: slide 5s ease-in-out;
-}
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            10%, 90% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-slide {
+            animation: slide 5s ease-in-out;
+        }
 
-@keyframes fade {
-    0%, 100% { opacity: 0; }
-    10%, 90% { opacity: 1; }
-}
-.animate-fade {
-    animation: fade 5s ease-in-out;
-}
+        @keyframes fade {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
+        }
+        .animate-fade {
+            animation: fade 5s ease-in-out;
+        }
 
-@keyframes bounce-horizontal {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(10px); }
-}
-.animate-bounce-horizontal {
-    animation: bounce-horizontal 2s infinite;
-}
+        @keyframes bounce-horizontal {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+        .animate-bounce-horizontal {
+            animation: bounce-horizontal 2s infinite;
+        }
 
-@keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-.animate-wave {
-    animation: wave 2s infinite;
-}
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-wave {
+            animation: wave 2s infinite;
+        }
 
-@keyframes scale {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-.animate-scale {
-    animation: scale 2s infinite;
-}
+        @keyframes scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .animate-scale {
+            animation: scale 2s infinite;
+        }
 
-/* Add this to your existing styles */
-.font-dancing {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.5rem; /* Slightly larger size for better readability */
-}
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem; 
+        }
     </style>
 </head>
 <body >
-    <!-- Loading Animation -->
+
     <div id="loader" class="heart-loader">
         <div class="heart"></div>
     </div>
 
-    <!-- Theme Toggle -->
     <button id="themeToggle" class="fixed top-4 right-4 p-3 z-50 transition-all duration-500 hover:rotate-180">
         <div id="themeIcon"></div>
         <span class="sr-only">Toggle theme</span>
@@ -318,19 +315,17 @@
             }
         }
 
-        // Initial icon update
         updateThemeIcon();
 
-        // Toggle theme and icon on click
         themetoggle.addEventListener('click', () => {
             isDarkMode = !isDarkMode;
             updateThemeIcon();
         });
     </script>
 
-    <!-- Valentine's Countdown -->
+
     <div id="countdownContainer" class="fixed bottom-2 right-2 z-50">
-        <!-- Expanded countdown view -->
+
         <div id="countdownExpanded" class="bg-pink-100 dark:bg-pink-900 p-2 rounded-lg shadow-lg">
             <div class="flex justify-between items-center">
                 <h3 class="text-sm font-semibold">Valentine's Day Countdown</h3>
@@ -343,7 +338,6 @@
             <div id="countdown" class="text-sm text-pink-600 dark:text-pink-300 mt-2"></div>
         </div>
         
-        <!-- Collapsed icon view -->
         <button id="countdownCollapsed" onclick="showCountdown()" class="hidden bg-pink-100 dark:bg-pink-900 p-2 rounded-full shadow-lg">
             <svg class="w-5 h-5 text-pink-600 dark:text-pink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -351,7 +345,6 @@
         </button>
     </div>
     <script>
-        // Auto hide countdown after 15 seconds
         setTimeout(() => {
             closeCountdown();
         }, 15000);
@@ -367,7 +360,6 @@
         }
     </script>
 
-    <!-- Gift Quiz Modal -->
     <div id="quizModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
         <div class="bg-white dark:bg-gray-800 p-6 rounded-lg max-w-md w-full">
             <h2 class="text-lg  mb-4">Find the Perfect Gift</h2>
@@ -439,12 +431,10 @@
     
     <div id="app"></div>
     <script>
-        // Remove loader after content loads
         window.addEventListener('load', () => {
             document.getElementById('loader').style.display = 'none';
         });
 
-        // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
             document.documentElement.setAttribute('data-theme', 
@@ -452,7 +442,6 @@
             );
         });
 
-        // Valentine's Countdown
         function updateCountdown() {
             const valentine = new Date(new Date().getFullYear(), 1, 14);
             if (valentine < new Date()) {
@@ -470,7 +459,6 @@
         }
         setInterval(updateCountdown, 1000);
 
-        // Gift Quiz
         const quizQuestions = [
             {
                 question: "What's their favorite color?",
@@ -480,7 +468,6 @@
                 question: "What's their style?",
                 options: ["Classic", "Modern", "Romantic", "Practical"]
             },
-            // Add more questions...
         ];
 
         let currentQuestion = 0;
@@ -517,7 +504,6 @@
         }
 
         function showRecommendations() {
-            // Implement gift recommendations based on answers
             const recommendations = getRecommendations(quizAnswers);
             document.getElementById('quizContent').innerHTML = `
                 <h3 class="text-lg font-bold mb-4">Your Perfect Gift Recommendations</h3>
@@ -539,711 +525,443 @@
         const productsData = [
             {
                 id: 1,
-                name: "Classic Leather Sneakers",
-                category: "Footwear",
+                name: "ROSE DAY",
+                category: "ROSE",
                 variants: [
                     {
                         id: 1,
-                        name: "White",
-                        code: "SN001-WHT",
+                        name: "Gold Rose",
+                        code: "24KGOLDR",
                         images: [
-                            { url: "https://images.meesho.com/images/products/443449067/h1du9_512.webp", alt: "White sneaker front view" },
-                            { url: "https://images.meesho.com/images/products/443449067/yktv9_512.webp", alt: "White sneaker side view" },
-                            { url: "https://images.meesho.com/images/products/443449067/wro1j_512.webp", alt: "White sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/61I1g2QPbBL._SL1001_.jpg", alt: "24k Gold Plated Artificial Rose Flower with Box - Valentine Gift for Girlfriend Boyfriend Girls Boys Husband Wife Love Couple" },
+                            { url: "https://m.media-amazon.com/images/I/718gktpg1DL._SL1500_.jpg", alt: "24k Gold Plated Artificial Rose Flower with Box - Valentine Gift for Girlfriend Boyfriend Girls Boys Husband Wife Love Couple" },
+                            { url: "https://m.media-amazon.com/images/I/71cgO9c7gSL._SL1500_.jpg", alt: "24k Gold Plated Artificial Rose Flower with Box - Valentine Gift for Girlfriend Boyfriend Girls Boys Husband Wife Love Couple" },
+                            { url: "https://m.media-amazon.com/images/I/61yhG4-O8rL._SL1240_.jpg", alt: "Gold Plated Rose 24K, Golden Rose 24K Foil Plated Rose Gold Dipped Rose Flower for Lover Mother Friends, Valentine's Day, Mother's Day, Thanksgiving' Day, Birthday, Christmas" },
+                            { url: "https://m.media-amazon.com/images/I/71X9yzqwcwL._SL1024_.jpg", alt: "Gold Plated Rose 24K, Golden Rose 24K Foil Plated Rose Gold Dipped Rose Flower for Lover Mother Friends, Valentine's Day, Mother's Day, Thanksgiving' Day, Birthday, Christmas" }
+
                         ],
-                        affiliateLinks: [{
-                            name: "Amazon",
+                        affiliateLinks: [ {
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/4jyalQK",
+                            price: "₹129",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
                                 score: 4.5,
-                                totalReviews: 2543
+                                totalReviews: 700
                             },
                             delivery: {
                                 type: "Prime",
                                 estimatedDays: "2-3 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
+                        },
+                        
+                        {
+                            name: "Flipkart",
+                            logo: "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/b81466db-0e48-4929-4ff3-635ec7e31900/preview",
+                            url: "https://fktr.in/XpaI2kr",
+                            price: "₹199",
                             coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
-                                score: 4.8,
-                                totalReviews: 1234
+                                score: 4.5,
+                                totalReviews: 46588
                             },
                             delivery: {
                                 type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
+                                estimatedDays: "4-6 days",
+                                isFree: true
                             }
-                        }]
+                        },
+                        {
+                            name: "Meesho",
+                            logo: "https://www.themediaant.com/blog/wp-content/uploads/2022/07/meesho-logo.jpg",
+                            url: "https://msho.in/uMJ8nr",
+                            price: "₹140",
+                            coupon: {
+                                code: "",
+                                discount: ""
+                            },
+                            rating: {
+                                score: 4,
+                                totalReviews: 1568
+                            },
+                            delivery: {
+                                type: "Standard",
+                                estimatedDays: "7-9 days",
+                                isFree: true
+                            }
+                        }
+                        ]
                     },
                     {
                         id: 2,
-                        name: "Black",
-                        code: "SN001-BLK",
+                        name: "Red Rose",
+                        code: "24KREDR",
                         images: [
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker front view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker side view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/51g0Md+OTAL.jpg", alt: "Plastic Red Rose for Valentine Day Gift Artificial Flower Valentine Gifts for Girlfriend Boyfriend Husband Wife Valentine Week Rose Day Gifts Rose Flower for Loved Once" },
+                            { url: "https://m.media-amazon.com/images/I/51U54DlgscL._SL1500_.jpg", alt: "" },
+                            { url: "https://m.media-amazon.com/images/I/51eGExeDDlL.jpg", alt: "" },
+                            { url: "https://m.media-amazon.com/images/I/61wFtpu5usL._SL1500_.jpg", alt: "" }
+                            
                         ],
                         affiliateLinks: [{
-                            name: "Amazon",
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/3PTtL4P",
+                            price: "₹129",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
-                                score: 4.5,
-                                totalReviews: 2543
+                                score: 4,
+                                totalReviews: 700
                             },
                             delivery: {
                                 type: "Prime",
-                                estimatedDays: "2-3 days",
+                                estimatedDays: "3-5 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
+                        },
+                        
+                        {
+                            name: "Flipkart",
+                            logo: "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/b81466db-0e48-4929-4ff3-635ec7e31900/preview",
+                            url: "https://fktr.in/pMlELZT",
+                            price: "₹129",
                             coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
-                                score: 4.8,
-                                totalReviews: 1234
+                                score: 4.1,
+                                totalReviews: 650
                             },
                             delivery: {
                                 type: "Standard",
                                 estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
-                    }
-                ]
-            },
-            {
-                id: 2,
-                name: "Classic Leather Sneakers",
-                category: "Footwear",
-                variants: [
-                    {
-                        id: 1,
-                        name: "White",
-                        code: "SN001-WHT",
-                        images: [
-                            { url: "https://images.meesho.com/images/products/443449067/h1du9_512.webp", alt: "White sneaker front view" },
-                            { url: "https://images.meesho.com/images/products/443449067/yktv9_512.webp", alt: "White sneaker side view" },
-                            { url: "https://images.meesho.com/images/products/443449067/wro1j_512.webp", alt: "White sneaker back view" }
-                        ],
-                        affiliateLinks: [{
-                            name: "Amazon",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
-                            coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
-                            },
-                            rating: {
-                                score: 4.5,
-                                totalReviews: 2543
-                            },
-                            delivery: {
-                                type: "Prime",
-                                estimatedDays: "2-3 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
+                        },
+                        {
+                            name: "Meesho",
+                            logo: "https://www.themediaant.com/blog/wp-content/uploads/2022/07/meesho-logo.jpg",
+                            url: "https://msho.in/IDFD45",
+                            price: "₹119",
                             coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
-                                score: 4.8,
-                                totalReviews: 1234
+                                score: 4,
+                                totalReviews: 1723
                             },
                             delivery: {
                                 type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
+                                estimatedDays: "7-9 days",
+                                isFree: true
                             }
-                        }]
+                        }
+                        ]
                     },
                     {
-                        id: 2,
-                        name: "Black",
-                        code: "SN001-BLK",
+                        id: 3,
+                        name: "Red Rose",
+                        code: "24KREDR",
                         images: [
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker front view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker side view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/71HlUFPxq5L._SL1500_.jpg", alt: "INTERNATIONAL GIFT Red Rose Flower with Golden Leaf with Love Shape Stand and Luxury Gift Box 25 Cm" },
+                            { url: "https://m.media-amazon.com/images/I/71WMUvelufL._SL1500_.jpg", alt: "" },
+                            { url: "https://m.media-amazon.com/images/I/51eGExeDDlL.jpg", alt: "" },
+                            { url: "https://m.media-amazon.com/images/I/61wFtpu5usL._SL1500_.jpg", alt: "" }
+                            
                         ],
                         affiliateLinks: [{
-                            name: "Amazon",
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/3PTtL4P",
+                            price: "₹129",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
-                                score: 4.5,
-                                totalReviews: 2543
+                                score: 4,
+                                totalReviews: 700
                             },
                             delivery: {
                                 type: "Prime",
-                                estimatedDays: "2-3 days",
+                                estimatedDays: "3-5 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
+                        },
+                        
+                        {
+                            name: "Flipkart",
+                            logo: "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/b81466db-0e48-4929-4ff3-635ec7e31900/preview",
+                            url: "https://fktr.in/pMlELZT",
+                            price: "₹129",
                             coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
-                                score: 4.8,
-                                totalReviews: 1234
+                                score: 4.1,
+                                totalReviews: 650
                             },
                             delivery: {
                                 type: "Standard",
                                 estimatedDays: "3-5 days",
-                                isFree: false
+                                isFree: true
                             }
-                        }]
+                        },
+                        {
+                            name: "Meesho",
+                            logo: "https://www.themediaant.com/blog/wp-content/uploads/2022/07/meesho-logo.jpg",
+                            url: "https://msho.in/IDFD45",
+                            price: "₹119",
+                            coupon: {
+                                code: "",
+                                discount: ""
+                            },
+                            rating: {
+                                score: 4,
+                                totalReviews: 1723
+                            },
+                            delivery: {
+                                type: "Standard",
+                                estimatedDays: "7-9 days",
+                                isFree: true
+                            }
+                        }
+                        ]
                     }
                 ]
             },
             {
                 id: 3,
-                name: "Classic Leather Sneakers",
-                category: "Footwear",
+                name: "ROSE DAY",
+                category: "ROSE",
                 variants: [
                     {
                         id: 1,
-                        name: "White",
-                        code: "SN001-WHT",
+                        name: "Gold Rose",
+                        code: "24KGOLDR",
                         images: [
-                            { url: "https://images.meesho.com/images/products/443449067/h1du9_512.webp", alt: "White sneaker front view" },
-                            { url: "https://images.meesho.com/images/products/443449067/yktv9_512.webp", alt: "White sneaker side view" },
-                            { url: "https://images.meesho.com/images/products/443449067/wro1j_512.webp", alt: "White sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/71u5qiWaJvL._SL1500_.jpg", alt: "Plastic Red Rose Flower And Gift Box - Best Valentine'S Day Gift, Birthday Gift, Artificial Flowers" },
+                            { url: "https://m.media-amazon.com/images/I/61hh72wx49L._SL1109_.jpg", alt: "" },
+                            { url: "https://m.media-amazon.com/images/I/51U54DlgscL._SL1500_.jpg", alt: "" },
                         ],
-                        affiliateLinks: [{
-                            name: "Amazon",
+                        affiliateLinks: [ {
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/40zkrbj",
+                            price: "₹249",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
                                 score: 4.5,
-                                totalReviews: 2543
+                                totalReviews: 383
                             },
                             delivery: {
                                 type: "Prime",
-                                estimatedDays: "2-3 days",
+                                estimatedDays: "3-5 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
+                        },
+                        ]
                     },
                     {
                         id: 2,
-                        name: "Black",
-                        code: "SN001-BLK",
+                        name: "Gold Rose",
+                        code: "24KGOLDR",
                         images: [
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker front view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker side view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/61X9o5+W-KL._SL1109_.jpg", alt: "Artificial Heart Shape Box and Teddy, Rose Floral Scented Bath Soap Rose Flower Petals and Rose Combo Pack (Red, 3 Pieces) - Valentine Day Gift, Artificial Flowers Aluminum" },
+                            { url: "https://m.media-amazon.com/images/I/61PxX73f3FL._SL1200_.jpg", alt: "" },
+                            { url: "https://m.media-amazon.com/images/I/61OeA4ZAswL._SL1109_.jpg", alt: "" },
                         ],
-                        affiliateLinks: [{
-                            name: "Amazon",
+                        affiliateLinks: [ {
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/40zkrbj",
+                            price: "₹399",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
                                 score: 4.5,
-                                totalReviews: 2543
+                                totalReviews: 400
                             },
                             delivery: {
                                 type: "Prime",
-                                estimatedDays: "2-3 days",
+                                estimatedDays: "3-5 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
-                    }
-                ]
-            },
-            {
-                id: 4,
-                name: "Classic Leather Sneakers",
-                category: "Footwear",
-                variants: [
-                    {
-                        id: 1,
-                        name: "White",
-                        code: "SN001-WHT",
-                        images: [
-                            { url: "https://images.meesho.com/images/products/443449067/h1du9_512.webp", alt: "White sneaker front view" },
-                            { url: "https://images.meesho.com/images/products/443449067/yktv9_512.webp", alt: "White sneaker side view" },
-                            { url: "https://images.meesho.com/images/products/443449067/wro1j_512.webp", alt: "White sneaker back view" }
-                        ],
-                        affiliateLinks: [{
-                            name: "Amazon",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
-                            coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
-                            },
-                            rating: {
-                                score: 4.5,
-                                totalReviews: 2543
-                            },
-                            delivery: {
-                                type: "Prime",
-                                estimatedDays: "2-3 days",
-                                isFree: true
-                            }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
+                        },
+                        ]
                     },
                     {
-                        id: 2,
-                        name: "Black",
-                        code: "SN001-BLK",
+                        id: 3,
+                        name: "Red Rose",
+                        code: "24KREDR",
                         images: [
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker front view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker side view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker back view" }
+                            { url: "https://rukminim2.flixcart.com/image/832/832/xif0q/valentine-gift-set/w/a/e/valentine-s-day-red-heart-box-with-red-rose-couple-ring-set-original-imagmcj66fxdyn3f.jpeg?q=70&crop=false", alt: "Artificial Flower, Jewellery, Keychain, Soft Toy, Greeting Card Gift Set" },        
                         ],
-                        affiliateLinks: [{
-                            name: "Amazon",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                        affiliateLinks: [
+                        {
+                            name: "Flipkart",
+                            logo: "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/b81466db-0e48-4929-4ff3-635ec7e31900/preview",
+                            url: "https://fktr.in/Gx9yxhI",
+                            price: "₹265",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
                                 score: 4.5,
-                                totalReviews: 2543
-                            },
-                            delivery: {
-                                type: "Prime",
-                                estimatedDays: "2-3 days",
-                                isFree: true
-                            }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
+                                totalReviews: 4899
                             },
                             delivery: {
                                 type: "Standard",
                                 estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
-                    }
-                ]
-            },
-            {
-                id: 5,
-                name: "Classic Leather Sneakers",
-                category: "Footwear",
-                variants: [
-                    {
-                        id: 1,
-                        name: "White",
-                        code: "SN001-WHT",
-                        images: [
-                            { url: "https://images.meesho.com/images/products/443449067/h1du9_512.webp", alt: "White sneaker front view" },
-                            { url: "https://images.meesho.com/images/products/443449067/yktv9_512.webp", alt: "White sneaker side view" },
-                            { url: "https://images.meesho.com/images/products/443449067/wro1j_512.webp", alt: "White sneaker back view" }
-                        ],
-                        affiliateLinks: [{
-                            name: "Amazon",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
-                            coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
-                            },
-                            rating: {
-                                score: 4.5,
-                                totalReviews: 2543
-                            },
-                            delivery: {
-                                type: "Prime",
-                                estimatedDays: "2-3 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
+                        },
+                        ]
                     },
                     {
-                        id: 2,
-                        name: "Black",
-                        code: "SN001-BLK",
+                        id: 4,
+                        name: "Red Rose",
+                        code: "24KREDR",
                         images: [
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker front view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker side view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/81Aq0ePFbWL._SL1500_.jpg", alt: "Valentine Gift Artificial Golden Rose Flower with Teddy Gift Box and Love Messages Bottles Combo - Valentine Gift for Girlfriend Boyfriend Husband Wife Couple" },
+                            { url: "https://m.media-amazon.com/images/I/81aOTW0wE4L._SL1500_.jpg", alt: "" },
+                            { url: "https://m.media-amazon.com/images/I/81t2nmGdYhL._SL1500_.jpg", alt: "" }  
                         ],
                         affiliateLinks: [{
-                            name: "Amazon",
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/3PTtL4P",
+                            price: "₹599",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
                                 score: 4.5,
-                                totalReviews: 2543
+                                totalReviews: 101
                             },
                             delivery: {
                                 type: "Prime",
-                                estimatedDays: "2-3 days",
+                                estimatedDays: "3-5 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
-                    }
-                ]
-            },
-            {
-                id: 6,
-                name: "Classic Leather Sneakers",
-                category: "Footwear",
-                variants: [
-                    {
-                        id: 1,
-                        name: "White",
-                        code: "SN001-WHT",
-                        images: [
-                            { url: "https://images.meesho.com/images/products/443449067/h1du9_512.webp", alt: "White sneaker front view" },
-                            { url: "https://images.meesho.com/images/products/443449067/yktv9_512.webp", alt: "White sneaker side view" },
-                            { url: "https://images.meesho.com/images/products/443449067/wro1j_512.webp", alt: "White sneaker back view" }
-                        ],
-                        affiliateLinks: [{
-                            name: "Amazon",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
-                            coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
-                            },
-                            rating: {
-                                score: 4.5,
-                                totalReviews: 2543
-                            },
-                            delivery: {
-                                type: "Prime",
-                                estimatedDays: "2-3 days",
-                                isFree: true
-                            }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
+                        }, 
+                        ]
                     },
                     {
-                        id: 2,
-                        name: "Black",
-                        code: "SN001-BLK",
+                        id: 5,
+                        name: "Red Rose",
+                        code: "24KREDR",
                         images: [
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker front view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker side view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/715p26IlBML._SL1500_.jpg", alt: "Red Valentine Day Gift Box with Teddy, Rose Showpiece, and 6 Flowers - Valentine Gift for Girlfriend Boyfriend Husband Wife - Valentine Day Gifts - Valentine Day Decoration Items" },
+                              
                         ],
                         affiliateLinks: [{
-                            name: "Amazon",
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/4hBwawV",
+                            price: "₹298",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
                                 score: 4.5,
-                                totalReviews: 2543
+                                totalReviews: 70
                             },
                             delivery: {
                                 type: "Prime",
-                                estimatedDays: "2-3 days",
+                                estimatedDays: "3-5 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
-                    }
-                ]
-            },
-            {
-                id: 7,
-                name: "Classic Leather Sneakers",
-                category: "Footwear",
-                variants: [
-                    {
-                        id: 1,
-                        name: "White",
-                        code: "SN001-WHT",
-                        images: [
-                            { url: "https://images.meesho.com/images/products/443449067/h1du9_512.webp", alt: "White sneaker front view" },
-                            { url: "https://images.meesho.com/images/products/443449067/yktv9_512.webp", alt: "White sneaker side view" },
-                            { url: "https://images.meesho.com/images/products/443449067/wro1j_512.webp", alt: "White sneaker back view" }
-                        ],
-                        affiliateLinks: [{
-                            name: "Amazon",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
-                            coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
-                            },
-                            rating: {
-                                score: 4.5,
-                                totalReviews: 2543
-                            },
-                            delivery: {
-                                type: "Prime",
-                                estimatedDays: "2-3 days",
-                                isFree: true
-                            }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
-                            coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
-                            },
-                            rating: {
-                                score: 4.8,
-                                totalReviews: 1234
-                            },
-                            delivery: {
-                                type: "Standard",
-                                estimatedDays: "3-5 days",
-                                isFree: false
-                            }
-                        }]
+                        },
+                         
+                        ]
                     },
                     {
-                        id: 2,
-                        name: "Black",
-                        code: "SN001-BLK",
+                        id: 6,
+                        name: "Red Rose",
+                        code: "24KREDR",
                         images: [
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker front view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker side view" },
-                            { url: "https://ae-pic-a1.aliexpress-media.com/kf/S4dfcb3b9e72048a2ac567d463cbd4273D.jpg_960x960q75.jpg_.avif", alt: "Black sneaker back view" }
+                            { url: "https://m.media-amazon.com/images/I/71y1gZkyRUL._SL1500_.jpg", alt: "Heart Shaped Valentines Day Gift Box with I Love You Message Teddy Bear 3 Red Roses| Valentine Gift for Girlfriend Boyfriend Husband Wife|Valentine Day Gifts|Valentine Day Decoration Items" },
+                              
                         ],
                         affiliateLinks: [{
-                            name: "Amazon",
+                            name: "Amazon.in",
                             logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
-                            url: "#",
-                            price: "$99.99",
+                            url: "https://amzn.to/4geVxni",
+                            price: "₹198",
                             coupon: {
-                                code: "SAVE20",
-                                discount: "20% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
                                 score: 4.5,
-                                totalReviews: 2543
+                                totalReviews: 70
                             },
                             delivery: {
                                 type: "Prime",
-                                estimatedDays: "2-3 days",
+                                estimatedDays: "3-5 days",
                                 isFree: true
                             }
-                        }, {
-                            name: "Nike",
-                            logo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-                            url: "#",
-                            price: "$89.99",
+                        },
+                         
+                        ]
+                    },
+                    {
+                        id: 7,
+                        name: "Red Rose",
+                        code: "24KREDR",
+                        images: [
+                            { url: "https://m.media-amazon.com/images/I/81smUVYMWtL._SL1500_.jpg", alt: "Heart Shaped Valentines Day Gift Box with I Love You Message Teddy Bear 3 Red Roses| Valentine Gift for Girlfriend Boyfriend Husband Wife|Valentine Day Gifts|Valentine Day Decoration Items" },
+                              
+                        ],
+                        affiliateLinks: [{
+                            name: "Amazon.in",
+                            logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
+                            url: "https://amzn.to/40zn3G9",
+                            price: "₹268",
                             coupon: {
-                                code: "NIKE15",
-                                discount: "15% OFF"
+                                code: "",
+                                discount: ""
                             },
                             rating: {
-                                score: 4.8,
-                                totalReviews: 1234
+                                score: 4.5,
+                                totalReviews: 70
                             },
                             delivery: {
-                                type: "Standard",
+                                type: "Prime",
                                 estimatedDays: "3-5 days",
-                                isFree: false
+                                isFree: true
                             }
-                        }]
+                        },
+                         
+                        ]
                     }
+                    
                 ]
-            },
+            }
+                                                     
         
         ];
         let selectedCategory = null;
@@ -1273,7 +991,6 @@
             selectedCategory = category;
             document.getElementById('selectedCategory').textContent = category;
 
-            // Re-hide the dropdown after a category is selected
             const dropdown = document.getElementById('categoryList');
             dropdown.classList.add('hidden');
             
@@ -1281,19 +998,19 @@
         }
 
         function handleSearchInput() {
-            applyFilters(); // Apply filters to update the display
+            applyFilters();
         }
 
-        // Function to apply both category and search filters
-        function applyFilters() {
-            const query = document.getElementById('searchInput').value.toLowerCase(); // Get search query
+        function 
+        
+        applyFilters() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
 
             const filteredProducts = productsData.filter(product => {
-                // Filter by selected category (if any) and search query
-                const matchesCategory = !selectedCategory || product.category === selectedCategory;
+                const matchesCategory = !selectedCategory || product.category === selectedCategory || selectedCategory === "All Categories";
                 const matchesSearch =
-                    product.name.toLowerCase().includes(query) || // Search by product name
-                    product.variants.some(variant => variant.code.toLowerCase().includes(query)); // Search by variant code
+                    product.name.toLowerCase().includes(query) ||
+                    product.variants.some(variant => variant.code.toLowerCase().includes(query)); 
                 return matchesCategory && matchesSearch;
             });
 
@@ -1334,7 +1051,7 @@
 
             if (product && variant) {
                 selectedVariants[productId] = { variant, currentIndex: 0 };
-                renderApp(); // Re-render after updating the selected variant
+                renderApp();
             }
         }
         // <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
@@ -1447,11 +1164,11 @@
 
             return `
                 <h3 class="mb-2 font-semibold text-lg text-amber-600 dark:text-amber-300 font-dancing">Available From</h3>
-                <div class="space-y-3">
+                <div class="space-y-1">
                     ${AffiliateLink.map(link => `
                         <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
                            class="flex flex-col w-full rounded-lg border border-amber-200 dark:border-indigo-700 
-                                  p-3 hover:bg-amber-50 dark:hover:bg-indigo-900 space-y-2 
+                                  p-0.5 hover:bg-amber-50 dark:hover:bg-indigo-900  
                                   transition-colors duration-200">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center gap-3">
@@ -1472,7 +1189,7 @@
                                         </div>
                                     </div>
                                 ` : ''}
-                                <span class="font-semibold text-amber-700 dark:text-indigo-300">${link.price}</span>
+                                <span class="pr-1 font-semibold text-amber-700 dark:text-indigo-300">${link.price}</span>
                             </div>
                             <div class="flex items-center justify-between text-sm">
                                 <div class="flex items-center gap-1">
@@ -1528,7 +1245,7 @@
                     <img 
                         src="${images[currentIndex].url}" 
                         alt="${images[currentIndex].alt}" 
-                        class="h-full w-full object-cover object-center transition-opacity duration-300"
+                        class="h-full w-full object-contain object-center transition-opacity duration-300"
                     />
                     
                     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-black bg-opacity-20 rounded-full px-3 py-1.5">
@@ -1578,7 +1295,6 @@
 
         renderApp();
 
-        // Add wishlist functionality to product cards
         function addToWishlist(productId) {
             const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
             if (!wishlist.includes(productId)) {
@@ -1589,11 +1305,9 @@
         }
     </script>
 
-    <!-- Valentine's Footer -->
     <footer class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-gray-900 dark:to-purple-900 pt-8 pb-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Quick Links -->
                 <div class="space-y-4">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                         <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
@@ -1609,7 +1323,6 @@
                     </ul>
                 </div>
 
-                <!-- Newsletter with Love Messages -->
                 <div class="space-y-4">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                         <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
@@ -1633,7 +1346,6 @@
                     </form>
                 </div>
 
-                <!-- Policy Modals -->
                 <div id="policyModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
                     <div class="bg-white dark:bg-gray-800 max-w-2xl w-full m-4 rounded-xl shadow-2xl transform transition-all">
                         <div class="p-6">
@@ -1650,7 +1362,6 @@
                     </div>
                 </div>
 
-                <!-- Social Links -->
                 <div class="space-y-4">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
                         <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
@@ -1683,7 +1394,6 @@
                 </div>
             </div>
 
-            <!-- Bottom Section -->
             <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div class="flex items-center gap-2">
@@ -1703,7 +1413,6 @@
     </footer>
 
     <script>
-    // Add this to your existing JavaScript
     const loveMessages = [
         "Love is in the air! 💕 Thanks for subscribing!",
         "You've just made our hearts flutter! 💝",
@@ -1727,7 +1436,6 @@
             messageElement.classList.remove('hidden');
             document.getElementById('subscribeEmail').value = '';
             
-            // Hide message after 5 seconds
             setTimeout(() => {
                 messageElement.classList.add('hidden');
             }, 5000);
@@ -1735,14 +1443,11 @@
     }
 
     function filterByCategory(category) {
-        // Update the category dropdown
         document.getElementById('selectedCategory').textContent = category;
         
-        // Apply the filter
         selectedCategory = category;
         applyFilters();
-        
-        // Scroll to the top of the products section
+
         document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -1805,13 +1510,13 @@
                         <h4 class="text-lg font-semibold mb-2">Ways to Connect 💌</h4>
                         <ul class="list-none space-y-3">
                             <li class="flex items-center gap-2">
-                                <span class="text-pink-500">📧</span> love@valentines.com
+                                <span class="text-pink-500">📧</span> workmoneysuccesssatisfaction@gmail.com
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-pink-500">📱</span> +1 (888) LOVE-YOU
+                                <span class="text-pink-500">📱</span> +91 6380384813 LOVE-YOU
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-pink-500">💝</span> 123 Valentine Street, Love City
+                                <span class="text-pink-500">💝</span> 123 Valentine Street,Chennai,Tamil nadu,India
                             </li>
                         </ul>
                     </div>
@@ -1835,14 +1540,12 @@
         document.getElementById('policyModal').classList.add('hidden');
     }
 
-    // Close modal when clicking outside
     document.getElementById('policyModal').addEventListener('click', (e) => {
         if (e.target === document.getElementById('policyModal')) {
             closeModal();
         }
     });
 
-    // Add this after your existing script
     const banners = [
         {
             text: "❤️ Happy Valentine's Day! Spread love and joy 💝",
@@ -1883,19 +1586,14 @@
         const bannerContent = document.getElementById('banner-content');
         const currentBanner = banners[currentBannerIndex];
 
-        // Update classes and content
         bannerContainer.className = `w-full overflow-hidden ${currentBanner.bgColor} border-b border-opacity-20 transition-all duration-500`;
         bannerContent.className = `flex items-center gap-2 ${currentBanner.textColor} ${currentBanner.animation}`;
         bannerContent.innerHTML = currentBanner.text;
 
-        // Update index for next banner
         currentBannerIndex = (currentBannerIndex + 1) % banners.length;
     }
-
-    // Initial banner update
     updateBanner();
 
-    // Rotate banners every 5 seconds
     setInterval(updateBanner, 5000);
     </script>
 </body>
